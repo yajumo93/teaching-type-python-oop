@@ -1,8 +1,9 @@
 # * Optional type
 
-from typing import Union, Optional
+from typing import Optional
 
 
+# return이 str일수도 있고 None일수도 있다
 def foo(name: str) -> Optional[str]:
     if name == "amamov":
         return None
@@ -11,3 +12,5 @@ def foo(name: str) -> Optional[str]:
 
 
 xxx: Optional[str] = foo("amamov")
+
+print(xxx)

@@ -12,7 +12,7 @@ class World:
 
 hello: Hello = Hello()
 world: World = World()
-
+ 
 
 # 타이핑을 해주어서 ins에 점찍으면 world 메소드 보임.
 def foo(ins: Hello) -> int:
@@ -27,6 +27,8 @@ print(foo(hello))
 from typing import Optional
 
 
+# 연결리스트
+
 class Node:
     def __init__(self, data: int, node: Optional["Node"] = None):
         self.data = data
@@ -40,3 +42,4 @@ print((node1.node.data))  # 12
 
 node0 = Node(30, node1)
 
+# node2 <- node1 <- node0
