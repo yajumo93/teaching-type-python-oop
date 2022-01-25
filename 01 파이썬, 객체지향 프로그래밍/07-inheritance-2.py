@@ -15,6 +15,13 @@
 """
 
 
+# import sys
+
+# print(sys.getdefaultencoding())
+
+# print("한글")
+
+
 class Robot:
 
     """
@@ -62,7 +69,7 @@ class Robot:
 
 class Siri(Robot):
     def call_me(self):
-        print("네?")
+        print("HI jm")
 
     def cal_mul(self, a, b):
         self.a = a

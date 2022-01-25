@@ -66,6 +66,7 @@ class BixbyKo(Robot):
         print("안녕 삼성")
 
 
+# 컴포지션 - 특정 클래스의 단 하나의 메소드만 가져오고 싶을때, 클래스 내부에서 객체하나 찍어서 메소드만 사용
 class BixbyCal:
     def __init__(self, name, age):
         self.Robot = Robot(name, age)

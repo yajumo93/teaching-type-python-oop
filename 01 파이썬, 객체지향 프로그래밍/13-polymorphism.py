@@ -2,6 +2,7 @@
 #* polymorphism
 #* 여러 형태를 가질 수 있도록 한다. 즉, 객체를 부품화할 수 있도록 한다.
 #* 같은 형태의 코드가 다른 동작을 하도록 하는 것
+#* 재사용성, 유지보수성에서 좋다
 """
 
 
@@ -46,12 +47,12 @@ class Robot:
 
 class Siri(Robot):
     def say_apple(self):
-        print("hello my apple")
+        print("hello my apple")  # * 같은 형태의 코드가 다른 동작을 하도록 하는 것
 
 
 class SiriKo(Robot):
     def say_apple(self):
-        print("안녕하세요")
+        print("안녕하세요")  # * 같은 형태의 코드가 다른 동작을 하도록 하는 것
 
 
 class Bixby(Robot):

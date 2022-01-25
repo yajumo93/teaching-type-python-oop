@@ -47,11 +47,12 @@ class Robot:
 droid = Robot("R2-D2", 2)
 
 
-print(droid.age)
+print(droid.age)  # __age를 읽기
 
 # droid.age = 7
 
-droid.age += 1
+droid.age += 1  # set property로 __age 쓰기
+# droid.age += 2  #  value error
 
 
 print(droid.age)

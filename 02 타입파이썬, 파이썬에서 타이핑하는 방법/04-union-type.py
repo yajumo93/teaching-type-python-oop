@@ -2,7 +2,7 @@
 
 from typing import Union
 
-xxx: Union[int, str] = 3
+xxx: Union[int, str] = 3  # 둘다 사용
 
 xxx = "17"
 
@@ -11,4 +11,5 @@ def foo(x: Union[int, str]) -> Union[int, str]:
     return x
 
 
-foo(xxx)
+print(foo(xxx))
+print(type(foo(xxx)))

@@ -7,7 +7,7 @@
 
 * 3. 메서드 오버라이딩
 
-* 4. super()
+* 4. super() -> super()는 부모 객체라고 생각
 
 * 5. Python의 모든 클래스는 object 클레스를 상속한다. : 모든 것은 객체이다.
 
@@ -62,7 +62,7 @@ class Robot:
 
 class Siri(Robot):
     def __init__(self, name, age):
-        super().__init__(name)
+        super().__init__(name)  #  이렇게하면 self.name = name과 Siri.population += 1을 안적어줘도 됨!!
         self.age = age
 
     def call_me(self):
@@ -72,9 +72,11 @@ class Siri(Robot):
         return a * b
 
     def cal_flexable(self, a, b):
-        super().say_hi()  # Greetings, my masters call me iphone8.
-        self.say_hi()  # Greetings, my masters call me iphone8. by apple.
-        return self.cal_mul(a, b) + self.cal_add(a, b) + super().cal_add(a, b)
+        super().say_hi()  # Greetings, my masters call me iphone8. # 오버라이딩 전 함수 실행
+        self.say_hi()  # Greetings, my masters call me iphone8. by apple. # 오버라이딩 한 함수 실행
+        return (
+            self.cal_mul(a, b) + self.cal_add(a, b) + super().cal_add(a, b)
+        )  # 여기서 self.cal_add()와 super().cal_add()는 동일한 함수임
 
     @classmethod
     def hello_apple(cls):

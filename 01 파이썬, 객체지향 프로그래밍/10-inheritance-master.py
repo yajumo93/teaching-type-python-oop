@@ -9,13 +9,13 @@
 
 * 4. super()
 
-* 5. Python의 모든 클래스는 object 클레스를 상속한다. : 모든 것은 객체이다.
+* 5. Python의 모든 클래스는 object 클레스를 상속한다. : 모든 것은 객체이다. # 파이썬의 핵심
 
-* MyClass.mro() --> 상속 관계를 보여준다.
+    * MyClass.mro() --> 상속 관계를 보여준다.
 """
 
 
-class Robot(object):
+class Robot(object):  # Robot() == Robot(object)
 
     """
     Robot Class
@@ -50,35 +50,44 @@ siri = Siri("iphone8")
 
 
 print(
-    Siri.mro()
-)  # * [<class '__main__.Siri'>, <class '__main__.Robot'>, <class 'object'>]
+    Siri.mro()  # 상속의 관계 표현.
+)  # * [<class '__main__.Siri'>, <class '__main__.Robot'>, <class 'object'>] # Siri가 Robot을 상속 받았고, Robot은 object를 상속받는다
 
 print(Robot.mro())  # * [<class '__main__.Robot'>, <class 'object'>]
 
-print(object)
+print(object)  # <class 'object'>
 
 print(dir(object))
+"""
+['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', 
+'__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', 
+'__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', 
+'__str__', '__subclasshook__']
+"""
 
-print(object.__name__)
+print(object.__name__)  # object
 
-print(int.mro())
+print(int.mro())  # [<class 'int'>, <class 'object'>]
 print(int.__init__(8.9))
 print(int(8.9))
 
 
-class A:
+# 다중상속 -> 좋지 않은 패턴(정신없음), 독립된 부품을 조립하는 용도로는 사용
+
+
+class A:  # 부품1
     pass
 
 
-class B:
+class B:  # 부품2
     pass
 
 
-class C:
+class C:  # 부품3
     pass
 
 
-class D(A, B, C):
+class D(A, B, C):  # 자동차
     pass
 
 

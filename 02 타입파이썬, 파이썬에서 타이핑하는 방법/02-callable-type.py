@@ -14,8 +14,17 @@ def tets():
     pass
 
 
+# callable[[pram1, pram2], return_type]
 def foo(func: Callable[[int, int], int]) -> int:
     return func(2, 3)
 
 
-print(foo(tets))
+# print(foo(tets)) # 에러 (params 없어서)
+
+print(foo(add))
+
+
+my_num: int = 10
+
+print(my_num)
+

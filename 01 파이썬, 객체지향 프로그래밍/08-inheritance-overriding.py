@@ -5,7 +5,7 @@
 
 * 2. 자식 클래스에서 별도의 메서드나 속성을 추가할 수 있다.
 
-* 3. 메서드 오버라이딩
+* 3. 메서드 오버라이딩 #  자식 클래스에서의 동일한 메소드가 덮어쓰기로 작동한다.
 
 * 4. super()
 
@@ -20,13 +20,14 @@ class Robot:
     """
     [Robot Class]
     Date : ??:??:??
-    Author : Amaco
+    Author : Amaco,
     """
 
     population = 0
 
-    def __init__(self, name):
+    def __init__(self, name, robot):
         self.name = name
+        self.robot = robot
         Robot.population += 1
 
     def die(self):
@@ -61,10 +62,12 @@ class Robot:
 
 
 class Siri(Robot):
-    def __init__(self, name, age):
+    def __init__(self, name, age, siri_robot):  # 매직 메소드 또한 부모 클래스의 동일한 메소드에 대해 덮어쓰기로 작동함
         self.name = name
         self.age = age
-        Siri.population += 1
+        Siri.population += 1 # 부모 클래스변수를 이렇게도 접근 가능 
+        # super().robot
+        
 
     def call_me(self):
         print("네?")
@@ -77,11 +80,11 @@ class Siri(Robot):
     def hello_apple(cls):
         print(f"{cls} hello apple!!")
 
-    def say_hi(self):
+    def say_hi(self):  # 부모 클래스의 동일한 메소드에 대해 덮어쓰기로 작동함
         print(f"Greetings, my masters call me {self.name}. by apple.")
 
     @classmethod
-    def how_many(cls):
+    def how_many(cls):  # 클래스 메소드 또한 부모 클래스의 동일한 메소드에 대해 덮어쓰기로 작동함
         return f"We have {cls.population} robots. by apple"
 
 

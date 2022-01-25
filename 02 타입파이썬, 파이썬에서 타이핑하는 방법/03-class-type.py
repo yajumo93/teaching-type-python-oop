@@ -1,4 +1,4 @@
-# class types
+# class types: 클래스 자체를 타이핑
 
 
 class Hello:
@@ -14,6 +14,7 @@ hello: Hello = Hello()
 world: World = World()
 
 
+# 타이핑을 해주어서 ins에 점찍으면 world 메소드 보임.
 def foo(ins: Hello) -> int:
     return ins.world()
 
@@ -35,5 +36,7 @@ class Node:
 node2 = Node(12)
 
 node1 = Node(27, node2)
+print((node1.node.data))  # 12
 
 node0 = Node(30, node1)
+
